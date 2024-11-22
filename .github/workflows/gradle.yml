@@ -27,16 +27,7 @@ jobs:
       run: ./gradlew build
     - name: List output APK files
       run: find ./app/build/outputs/apk/nonRoot/release/ -type f
-    - name: Sign app APK
-      uses: r0adkll/sign-android-release@v1
-      id: sign_app
-      with:
-        releaseDirectory: ./app/build/outputs/apk/nonRoot/release
-        signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-        alias: ${{ secrets.ALIAS }}
-        keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-        keyPassword: ${{ secrets.KEY_PASSWORD }}
-    - run: mv ${{steps.sign_app.outputs.signedReleaseFile}} moonlight.apk
+    - run: mv ./app/build/outputs/apk/nonRoot/release/app-nonRoot-release-unsigned.apk moonlight.apk
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "*.apk"
