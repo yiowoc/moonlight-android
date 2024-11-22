@@ -226,7 +226,7 @@ public class PreferenceConfiguration {
         }
         else {
             // Should be unreachable
-            return RES_720P;
+            return RES_4K;
         }
     }
 
@@ -244,13 +244,13 @@ public class PreferenceConfiguration {
                 return RES_360P;
             case 480:
                 return RES_480P;
-            default:
             case 720:
                 return RES_720P;
             case 1080:
                 return RES_1080P;
             case 1440:
                 return RES_1440P;
+            default:
             case 2160:
                 return RES_4K;
         }
