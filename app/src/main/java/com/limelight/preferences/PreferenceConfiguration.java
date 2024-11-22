@@ -501,8 +501,8 @@ public class PreferenceConfiguration {
             }
             else {
                 // Should never get here
-                config.width = 1280;
-                config.height = 720;
+                config.width = 3840;
+                config.height = 2160;
                 config.fps = 60;
             }
 
