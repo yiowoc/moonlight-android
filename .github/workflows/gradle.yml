@@ -25,6 +25,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v3
     - name: Build with Gradle
       run: ./gradlew build
+
     # - name: List output APK files
     #   run: find ./app/build/outputs/apk/nonRoot/release/ -type f
     # - name: Sign app APK
@@ -38,6 +39,7 @@ jobs:
     #     keyPassword: ${{ secrets.KEY_PASSWORD }}
     #   env:
     #     BUILD_TOOLS_VERSION: "34.0.0"
+    
     - run: mv ./app/build/outputs/apk/nonRoot/release/app-nonRoot-release-unsigned.apk moonlight.apk
     - uses: ncipollo/release-action@v1
       with:
